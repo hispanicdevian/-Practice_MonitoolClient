@@ -95,210 +95,93 @@ fun mainScreen() {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 55.dp),
+                .padding(top = 55.dp)
+                .padding(horizontal = 15.dp),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-
+// Box Set 1
             Column(
                 modifier = Modifier
                     .fillMaxSize(1f)
                     .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-
                 Spacer(modifier = Modifier.height(15.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(15.dp))
+                repeat(4) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f, fill = false)
+                            .aspectRatio(1.5f)
+                            .border(BorderStroke(1.dp, Color.Green))
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                }
             }
-            Spacer(modifier = Modifier.width(10.dp))
+// Box Set 2
             Column(
                 modifier = Modifier
                     .fillMaxSize(1f)
                     .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-
                 Spacer(modifier = Modifier.height(15.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(15.dp))
+                repeat(4) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f, fill = false)
+                            .aspectRatio(1.5f)
+                            .border(BorderStroke(1.dp, Color.Green))
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                }
             }
-            Spacer(modifier = Modifier.width(10.dp))
+// Box Set 3
             Column(
                 modifier = Modifier
                     .fillMaxSize(1f)
                     .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-
                 Spacer(modifier = Modifier.height(15.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(15.dp))
+                repeat(4) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f, fill = false)
+                            .aspectRatio(1.5f)
+                            .border(BorderStroke(1.dp, Color.Green))
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                }
             }
-            Spacer(modifier = Modifier.width(10.dp))
+// Box Set 4
             Column(
                 modifier = Modifier
                     .fillMaxSize(1f)
                     .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-
                 Spacer(modifier = Modifier.height(15.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(15.dp))
-            }
-            Spacer(modifier = Modifier.width(10.dp))
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(1f)
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Spacer(modifier = Modifier.height(15.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-
-                )
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .aspectRatio(1.5f)
-                        .border(BorderStroke(1.dp, Color.Green))
-                )
-                Spacer(modifier = Modifier.height(15.dp))
+                repeat(4) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f, fill = false)
+                            .aspectRatio(1.5f)
+                            .border(BorderStroke(1.dp, Color.Green))
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                }
             }
         }
     }
 }
+
+
+
+
+
+
