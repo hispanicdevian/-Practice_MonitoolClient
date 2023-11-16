@@ -30,7 +30,6 @@ import kotlinx.coroutines.isActive
 @Preview
 fun mainScreen() {
 
-
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -44,6 +43,7 @@ fun mainScreen() {
     var pingSuccessful10 by remember { mutableStateOf(false) }
     var pingSuccessful11 by remember { mutableStateOf(false) }
 
+// Full Container Box
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -66,10 +66,11 @@ fun mainScreen() {
             )
         }
 
+// Settings Button
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 15.dp, end = 15.dp), // Adjust the padding as needed
+                .padding(top = 15.dp, end = 15.dp),
         ) {
             // Box in the top-right corner
             Box(
@@ -77,7 +78,7 @@ fun mainScreen() {
                     .size(30.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 20.dp), // You can also change the color and radius of the ripple
+                        indication = rememberRipple(bounded = false, radius = 20.dp),
                         onClick = {  }
                     )
             ) {
@@ -89,6 +90,7 @@ fun mainScreen() {
             }
         }
 
+// Coroutine Call to App Engines
         LaunchedEffect(Unit) {
             while (isActive) {
                 val results = listOf(
@@ -105,9 +107,10 @@ fun mainScreen() {
                     async { pingEngineAPI(ipAddress9) },
                     async { pingEngineAPI(ipAddress10) },
                     async { pingEngineAPI(ipAddress11) }
-                    // add more as needed
+                    // Add as needed
                 )
 
+// Engine Request Results
                 pingSuccessful0 = results[0].await()
                 pingSuccessful1 = results[1].await()
                 pingSuccessful2 = results[2].await()
@@ -120,12 +123,13 @@ fun mainScreen() {
                 pingSuccessful9 = results[9].await()
                 pingSuccessful10 = results[10].await()
                 pingSuccessful11 = results[11].await()
-                // update more as needed
+                // Add as needed
 
-                delay(10000) // delay for 10 second
+                delay(10000) // this is in ms, delay for 10 second
             }
         }
 
+// Row Container for Columns of Light Changing Boxes
         Row(
             modifier = Modifier
                 .fillMaxSize()

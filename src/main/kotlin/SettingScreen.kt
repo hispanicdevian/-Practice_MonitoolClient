@@ -13,6 +13,7 @@ const val ipAddress8 = "google.com"
 const val ipAddress9 = "ubuntu.com"
 const val ipAddress10 = "linuxmint.com"
 const val ipAddress11 = "opensuse.org"
+
 @Composable
 @Preview
 fun settingScreen() {
