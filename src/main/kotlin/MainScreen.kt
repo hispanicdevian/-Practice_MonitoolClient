@@ -15,12 +15,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_layout.IPBoxes.ipBoxA
-import custom_layout.IPBoxes.ipBoxB
-import custom_layout.IPBoxes.ipBoxC
-import custom_layout.IPBoxes.ipBoxD
-import custom_res.ErgoGray
-import custom_res.Purple40
+import custom_layout.ipBoxA
+import custom_layout.ipBoxB
+import custom_layout.ipBoxC
+import custom_layout.ipBoxD
 import engine.pingEngineAPI
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay

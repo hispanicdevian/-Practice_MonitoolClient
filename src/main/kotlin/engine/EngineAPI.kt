@@ -7,7 +7,7 @@ import java.net.URL
 
 suspend fun pingEngineAPI(ip: String): Boolean = withContext(Dispatchers.IO) {
     try {
-        val url = URL("http://192.168.74.229:8080/pingMotor") // replace with your server's URL
+        val url = URL("http://IPIPIPIPIPIP:8080/pingMotor") // Replace IP or Hostname to match the API
         val connection = url.openConnection() as HttpURLConnection
         connection.requestMethod = "POST"
         connection.doOutput = true
@@ -15,7 +15,8 @@ suspend fun pingEngineAPI(ip: String): Boolean = withContext(Dispatchers.IO) {
         connection.outputStream.write(("ip=$ip").toByteArray(Charsets.UTF_8))
         connection.connect()
 
-        val response = connection.inputStream.bufferedReader().use { it.readText() } // response from the server
+// This Handle the Response From The API
+        val response = connection.inputStream.bufferedReader().use { it.readText() }
         connection.disconnect()
 
         return@withContext response == "true"

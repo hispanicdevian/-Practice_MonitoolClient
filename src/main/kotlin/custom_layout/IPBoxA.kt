@@ -1,5 +1,7 @@
-package custom_layout.IPBoxes
+package custom_layout
 
+import ErgoGreen
+import ErgoRed
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
@@ -8,8 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import custom_res.ErgoGreen
-import custom_res.ErgoRed
 import ipAddress0
 import ipAddress1
 import ipAddress2
