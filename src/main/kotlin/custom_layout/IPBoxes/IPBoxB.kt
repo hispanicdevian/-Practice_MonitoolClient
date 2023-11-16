@@ -1,4 +1,4 @@
-package custom_layout
+package custom_layout.IPBoxes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -8,13 +8,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import ipAddress10
-import ipAddress11
-import ipAddress8
-import ipAddress9
+import custom_res.ErgoGreen
+import custom_res.ErgoRed
+import ipAddress4
+import ipAddress5
+import ipAddress6
+import ipAddress7
 
 @Composable
-fun ipBoxC(pingSuccessfulA: Boolean, pingSuccessfulB: Boolean, pingSuccessfulC: Boolean, pingSuccessfulD: Boolean) {
+fun ipBoxB(pingSuccessfulA: Boolean, pingSuccessfulB: Boolean, pingSuccessfulC: Boolean, pingSuccessfulD: Boolean) {
 
     val pingSuccessfulList = listOf(pingSuccessfulA, pingSuccessfulB, pingSuccessfulC, pingSuccessfulD)
     Column(
@@ -32,10 +34,10 @@ fun ipBoxC(pingSuccessfulA: Boolean, pingSuccessfulB: Boolean, pingSuccessfulC: 
                     .background((if (pingSuccessfulList[it]) ErgoGreen else ErgoRed), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             ) {
                 when (it) {
-                    0 -> ipAddress8
-                    1 -> ipAddress9
-                    2 -> ipAddress10
-                    3 -> ipAddress11
+                    0 -> ipAddress4
+                    1 -> ipAddress5
+                    2 -> ipAddress6
+                    3 -> ipAddress7
                     else -> {}
                 }
             }

@@ -1,19 +1,26 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_layout.*
+import custom_layout.IPBoxes.ipBoxA
+import custom_layout.IPBoxes.ipBoxB
+import custom_layout.IPBoxes.ipBoxC
+import custom_layout.IPBoxes.ipBoxD
+import custom_res.ErgoGray
+import custom_res.Purple40
 import engine.pingEngineAPI
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -22,6 +29,7 @@ import kotlinx.coroutines.isActive
 @Composable
 @Preview
 fun mainScreen() {
+
 
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
@@ -61,14 +69,24 @@ fun mainScreen() {
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 15.dp, end = 15.dp) // Adjust the padding as needed
+                .padding(top = 15.dp, end = 15.dp), // Adjust the padding as needed
         ) {
             // Box in the top-right corner
             Box(
                 modifier = Modifier
                     .size(30.dp)
-                    .border(BorderStroke(2.dp, Color.DarkGray), shape = AbsoluteRoundedCornerShape(5.dp)),
-            )
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = rememberRipple(bounded = false, radius = 20.dp), // You can also change the color and radius of the ripple
+                        onClick = {  }
+                    )
+            ) {
+                Image(
+                    painter = painterResource("SettingsPng240F.png"),
+                    contentDescription = "Sample",
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
         }
 
         LaunchedEffect(Unit) {

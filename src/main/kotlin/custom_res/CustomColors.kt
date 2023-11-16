@@ -1,4 +1,4 @@
-package custom_layout
+package custom_res
 
 import androidx.compose.ui.graphics.Color
 

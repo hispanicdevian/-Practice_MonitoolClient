@@ -1,4 +1,4 @@
-package custom_layout
+package custom_layout.IPBoxes
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import custom_res.ErgoGray
 
 @Composable
 fun ipBoxD() {
