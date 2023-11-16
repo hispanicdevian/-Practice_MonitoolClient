@@ -1,6 +1,5 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.border
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -21,26 +20,26 @@ import kotlinx.coroutines.isActive
 @Preview
 fun mainScreen() {
 
-    var ipSuccessful0 by remember { mutableStateOf(false) }
-    var ipSuccessful1 by remember { mutableStateOf(false) }
-    var ipSuccessful2 by remember { mutableStateOf(false) }
-    var ipSuccessful3 by remember { mutableStateOf(false) }
-    var ipSuccessful4 by remember { mutableStateOf(false) }
-    var ipSuccessful5 by remember { mutableStateOf(false) }
-    var ipSuccessful6 by remember { mutableStateOf(false) }
-    var ipSuccessful7 by remember { mutableStateOf(false) }
-    var ipSuccessful8 by remember { mutableStateOf(false) }
-    var ipSuccessful9 by remember { mutableStateOf(false) }
-    var ipSuccessful10 by remember { mutableStateOf(false) }
-    var ipSuccessful11 by remember { mutableStateOf(false) }
+    var pingSuccessful0 by remember { mutableStateOf(false) }
+    var pingSuccessful1 by remember { mutableStateOf(false) }
+    var pingSuccessful2 by remember { mutableStateOf(false) }
+    var pingSuccessful3 by remember { mutableStateOf(false) }
+    var pingSuccessful4 by remember { mutableStateOf(false) }
+    var pingSuccessful5 by remember { mutableStateOf(false) }
+    var pingSuccessful6 by remember { mutableStateOf(false) }
+    var pingSuccessful7 by remember { mutableStateOf(false) }
+    var pingSuccessful8 by remember { mutableStateOf(false) }
+    var pingSuccessful9 by remember { mutableStateOf(false) }
+    var pingSuccessful10 by remember { mutableStateOf(false) }
+    var pingSuccessful11 by remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .background(ErgoGray)
     ) {
-
         TopAppBar(
-            backgroundColor = Color.DarkGray,
+            backgroundColor = Purple40,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(2.dp)
@@ -75,18 +74,18 @@ fun mainScreen() {
                     // add more as needed
                 )
 
-                ipSuccessful0 = results[0].await() as Boolean
-                ipSuccessful1 = results[1].await() as Boolean
-                ipSuccessful2 = results[2].await() as Boolean
-                ipSuccessful3 = results[3].await() as Boolean
-                ipSuccessful4 = results[4].await() as Boolean
-                ipSuccessful5 = results[5].await() as Boolean
-                ipSuccessful6 = results[6].await() as Boolean
-                ipSuccessful7 = results[7].await() as Boolean
-                ipSuccessful8 = results[8].await() as Boolean
-                ipSuccessful9 = results[9].await() as Boolean
-                ipSuccessful10 = results[10].await() as Boolean
-                ipSuccessful11 = results[11].await() as Boolean
+                pingSuccessful0 = results[0].await()
+                pingSuccessful1 = results[1].await()
+                pingSuccessful2 = results[2].await()
+                pingSuccessful3 = results[3].await()
+                pingSuccessful4 = results[4].await()
+                pingSuccessful5 = results[5].await()
+                pingSuccessful6 = results[6].await()
+                pingSuccessful7 = results[7].await()
+                pingSuccessful8 = results[8].await()
+                pingSuccessful9 = results[9].await()
+                pingSuccessful10 = results[10].await()
+                pingSuccessful11 = results[11].await()
                 // update more as needed
 
                 delay(10000) // delay for 10 second
@@ -102,87 +101,16 @@ fun mainScreen() {
             verticalAlignment = Alignment.CenterVertically
         ) {
 // Box Set 1
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(1f)
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Spacer(modifier = Modifier.height(15.dp))
-                repeat(4) {
-                    Box(
-                        modifier = Modifier
-                            .weight(1f, fill = false)
-                            .aspectRatio(1.5f)
-                            .border(BorderStroke(5.dp, Color.DarkGray))
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                }
-            }
+            ipBoxA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
+            Spacer(modifier = Modifier.width(20.dp))
 // Box Set 2
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(1f)
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Spacer(modifier = Modifier.height(15.dp))
-                repeat(4) {
-                    Box(
-                        modifier = Modifier
-                            .weight(1f, fill = false)
-                            .aspectRatio(1.5f)
-                            .border(BorderStroke(5.dp, Color.DarkGray))
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                }
-            }
+            ipBoxB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
+            Spacer(modifier = Modifier.width(20.dp))
 // Box Set 3
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(1f)
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Spacer(modifier = Modifier.height(15.dp))
-                repeat(4) {
-                    Box(
-                        modifier = Modifier
-                            .weight(1f, fill = false)
-                            .aspectRatio(1.5f)
-                            .border(BorderStroke(5.dp, Color.DarkGray))
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                }
-            }
+            ipBoxC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
+            Spacer(modifier = Modifier.width(20.dp))
 // Box Set 4
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(1f)
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Spacer(modifier = Modifier.height(15.dp))
-                repeat(4) {
-                    Box(
-                        modifier = Modifier
-                            .weight(1f, fill = false)
-                            .aspectRatio(1.5f)
-                            .border(BorderStroke(5.dp, Color.DarkGray))
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                }
-            }
+            ipBoxD()
         }
     }
 }
-
-
-
-
-
-
