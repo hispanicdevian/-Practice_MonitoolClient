@@ -1,6 +1,9 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.*
@@ -52,6 +55,19 @@ fun mainScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentSize(Alignment.Center)
+            )
+        }
+
+        Box(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 15.dp, end = 15.dp) // Adjust the padding as needed
+        ) {
+            // Box in the top-right corner
+            Box(
+                modifier = Modifier
+                    .size(30.dp)
+                    .border(BorderStroke(2.dp, Color.DarkGray), shape = AbsoluteRoundedCornerShape(5.dp)),
             )
         }
 
