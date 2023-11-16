@@ -11,27 +11,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 
 @Composable
 @Preview
 fun mainScreen() {
 
-    var snmpTempResultA by remember { mutableStateOf("") }
-    var snmpHumidResultA by remember { mutableStateOf("") }
-    var snmpTempResultB by remember { mutableStateOf("") }
-    var snmpHumidResultB by remember { mutableStateOf("") }
-    var severSuccessful1 by remember { mutableStateOf(false) }
-    var severSuccessful2 by remember { mutableStateOf(false) }
-    var severSuccessful3 by remember { mutableStateOf(false) }
-    var severSuccessful4 by remember { mutableStateOf(false) }
-    var severSuccessful5 by remember { mutableStateOf(false) }
-    var severSuccessful6 by remember { mutableStateOf(false) }
-    var severSuccessful7 by remember { mutableStateOf(false) }
-    var severSuccessful8 by remember { mutableStateOf(false) }
-    var severSuccessful9 by remember { mutableStateOf(false) }
-    var severSuccessful10 by remember { mutableStateOf(false) }
-    var severSuccessful11 by remember { mutableStateOf(false) }
-    var severSuccessful12 by remember { mutableStateOf(false) }
+    var ipSuccessful0 by remember { mutableStateOf(false) }
+    var ipSuccessful1 by remember { mutableStateOf(false) }
+    var ipSuccessful2 by remember { mutableStateOf(false) }
+    var ipSuccessful3 by remember { mutableStateOf(false) }
+    var ipSuccessful4 by remember { mutableStateOf(false) }
+    var ipSuccessful5 by remember { mutableStateOf(false) }
+    var ipSuccessful6 by remember { mutableStateOf(false) }
+    var ipSuccessful7 by remember { mutableStateOf(false) }
+    var ipSuccessful8 by remember { mutableStateOf(false) }
+    var ipSuccessful9 by remember { mutableStateOf(false) }
+    var ipSuccessful10 by remember { mutableStateOf(false) }
+    var ipSuccessful11 by remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier
@@ -54,7 +53,7 @@ fun mainScreen() {
                     .wrapContentSize(Alignment.Center)
             )
         }
-        /*
+
         LaunchedEffect(Unit) {
             while (isActive) {
                 val results = listOf(
@@ -74,24 +73,24 @@ fun mainScreen() {
                     // add more as needed
                 )
 
-                severSuccessful1 = results[0].await() as Boolean
-                severSuccessful2 = results[1].await() as Boolean
-                severSuccessful3 = results[2].await() as Boolean
-                severSuccessful4 = results[3].await() as Boolean
-                severSuccessful5 = results[4].await() as Boolean
-                severSuccessful6 = results[5].await() as Boolean
-                severSuccessful7 = results[6].await() as Boolean
-                severSuccessful8 = results[7].await() as Boolean
-                severSuccessful9 = results[8].await() as Boolean
-                severSuccessful10 = results[9].await() as Boolean
-                severSuccessful11 = results[10].await() as Boolean
-                severSuccessful12 = results[11].await() as Boolean
+                ipSuccessful0 = results[0].await() as Boolean
+                ipSuccessful1 = results[1].await() as Boolean
+                ipSuccessful2 = results[2].await() as Boolean
+                ipSuccessful3 = results[3].await() as Boolean
+                ipSuccessful4 = results[4].await() as Boolean
+                ipSuccessful5 = results[5].await() as Boolean
+                ipSuccessful6 = results[6].await() as Boolean
+                ipSuccessful7 = results[7].await() as Boolean
+                ipSuccessful8 = results[8].await() as Boolean
+                ipSuccessful9 = results[9].await() as Boolean
+                ipSuccessful10 = results[10].await() as Boolean
+                ipSuccessful11 = results[11].await() as Boolean
                 // update more as needed
 
                 delay(10000) // delay for 10 second
             }
         }
-*/
+
         Row(
             modifier = Modifier
                 .fillMaxSize()
@@ -114,7 +113,7 @@ fun mainScreen() {
                         modifier = Modifier
                             .weight(1f, fill = false)
                             .aspectRatio(1.5f)
-                            .border(BorderStroke(1.dp, Color.Green))
+                            .border(BorderStroke(5.dp, Color.DarkGray))
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
@@ -133,7 +132,7 @@ fun mainScreen() {
                         modifier = Modifier
                             .weight(1f, fill = false)
                             .aspectRatio(1.5f)
-                            .border(BorderStroke(1.dp, Color.Green))
+                            .border(BorderStroke(5.dp, Color.DarkGray))
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
@@ -152,7 +151,7 @@ fun mainScreen() {
                         modifier = Modifier
                             .weight(1f, fill = false)
                             .aspectRatio(1.5f)
-                            .border(BorderStroke(1.dp, Color.Green))
+                            .border(BorderStroke(5.dp, Color.DarkGray))
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
@@ -171,7 +170,7 @@ fun mainScreen() {
                         modifier = Modifier
                             .weight(1f, fill = false)
                             .aspectRatio(1.5f)
-                            .border(BorderStroke(1.dp, Color.Green))
+                            .border(BorderStroke(5.dp, Color.DarkGray))
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
