@@ -29,7 +29,7 @@ import kotlinx.coroutines.isActive
 @Composable
 @Preview
 fun mainScreen() {
-
+// Go to /SettingScreen.kt for IP Variables
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -138,16 +138,16 @@ fun mainScreen() {
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-// Box Set 1
+// Box Set A
             ipBoxA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
             Spacer(modifier = Modifier.width(20.dp))
-// Box Set 2
+// Box Set B
             ipBoxB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
             Spacer(modifier = Modifier.width(20.dp))
-// Box Set 3
+// Box Set C
             ipBoxC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
             Spacer(modifier = Modifier.width(20.dp))
-// Box Set 4
+// Box Set D
             ipBoxD()
         }
     }
