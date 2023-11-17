@@ -1,3 +1,7 @@
+package views
+
+import ErgoGray
+import Purple40
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,9 +28,17 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 
+sealed class Screen {
+    data object Main : Screen()
+    data object Setting : Screen()
+}
+
 @Composable
 @Preview
 fun mainScreen() {
+
+    var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
+
 // Go to /SettingScreen.kt for IP Variables
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
@@ -77,7 +89,7 @@ fun mainScreen() {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 20.dp),
-                        onClick = {  }
+                        onClick = { currentScreen = Screen.Setting }
                     )
             ) {
                 Image(
@@ -127,26 +139,28 @@ fun mainScreen() {
             }
         }
 
-// Row Container for Columns of Light Changing Boxes
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 55.dp)
-                .padding(horizontal = 15.dp),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-// Box Set A
-            ipBoxA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
-            Spacer(modifier = Modifier.width(20.dp))
-// Box Set B
-            ipBoxB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
-            Spacer(modifier = Modifier.width(20.dp))
-// Box Set C
-            ipBoxC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
-            Spacer(modifier = Modifier.width(20.dp))
-// Box Set D
-            ipBoxD()
+        when (currentScreen) {
+            is Screen.Main -> {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 55.dp)
+                        .padding(horizontal = 15.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    ipBoxA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
+                    Spacer(modifier = Modifier.width(20.dp))
+                    ipBoxB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
+                    Spacer(modifier = Modifier.width(20.dp))
+                    ipBoxC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
+                    Spacer(modifier = Modifier.width(20.dp))
+                    ipBoxD()
+                }
+            }
+            is Screen.Setting -> {
+                settingScreen()
+            }
         }
     }
 }
