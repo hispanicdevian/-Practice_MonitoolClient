@@ -8,6 +8,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import setting_boxes.settingBoxA
+import setting_boxes.settingBoxB
+import setting_boxes.settingBoxC
+import setting_boxes.settingBoxD
 
 @Composable
 @Preview
@@ -19,7 +23,6 @@ fun settingScreen() {
             .padding(top = 60.dp)
             .background(ErgoGray)
     ) {
-
         Row(
             modifier = Modifier
                 .fillMaxSize()
@@ -33,7 +36,7 @@ fun settingScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                //settingBoxA()
+                settingBoxA()
             }
             Spacer(modifier = Modifier.width(12.dp))
 // Box Set B
@@ -41,7 +44,7 @@ fun settingScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                //settingBoxB()
+                settingBoxB()
             }
             Spacer(modifier = Modifier.width(12.dp))
 // Box Set C
@@ -49,7 +52,7 @@ fun settingScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                //settingBoxC()
+                settingBoxC()
             }
             Spacer(modifier = Modifier.width(12.dp))
 // Box Set D
@@ -57,7 +60,7 @@ fun settingScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                //settingBoxD()
+                settingBoxD()
             }
         }
     }
