@@ -1,7 +1,7 @@
 package ip_boxes
 
-import ErgoGreen
-import ErgoRed
+import CustomGreen
+import CustomRed
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
@@ -28,11 +28,11 @@ fun ipBoxA(pingSuccessfulA: Boolean, pingSuccessfulB: Boolean, pingSuccessfulC: 
         repeat(4) {
             Box(
                 modifier = Modifier
-                    .background(color = Color.DarkGray, shape = AbsoluteRoundedCornerShape(8.dp))
+                    .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
                     .padding(5.dp)
                     .weight(1f)
                     .aspectRatio(1.5f)
-                    .background((if (pingSuccessfulList[it]) ErgoGreen else ErgoRed), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
+                    .background((if (pingSuccessfulList[it]) CustomGreen else CustomRed), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
             ) {
                 when (it) {
                     0 -> ipAddress0
