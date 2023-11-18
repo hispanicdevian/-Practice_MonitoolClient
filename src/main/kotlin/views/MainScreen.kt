@@ -93,7 +93,7 @@ fun mainScreen() {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = rememberRipple(bounded = false, radius = 15.dp),
-                        onClick = {  }
+                        onClick = { currentScreen = Screen.Setting }
                     )
             ) {
                 Image(
