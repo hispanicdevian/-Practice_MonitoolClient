@@ -23,6 +23,7 @@ fun settingBoxA() {
     var ipAddressD by remember { mutableStateOf(IPFileHandler.readIPAddressD()) }
 
     Column(
+        modifier = Modifier.padding(bottom = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -52,7 +53,7 @@ fun settingBoxA() {
             )
         }
 // Edit Box B > 1
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(12.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -77,7 +78,7 @@ fun settingBoxA() {
             )
         }
 // Edit Box C > 2
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(12.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))
@@ -102,7 +103,7 @@ fun settingBoxA() {
             )
         }
 // Edit Box D > 3
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(12.dp))
         Box(
             modifier = Modifier
                 .background(color = Color.Black, shape = AbsoluteRoundedCornerShape(8.dp))

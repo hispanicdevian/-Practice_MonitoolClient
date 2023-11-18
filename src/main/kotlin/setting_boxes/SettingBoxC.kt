@@ -52,6 +52,6 @@ fun settingBoxC() {
                 .aspectRatio(1.5f)
                 .background((ErgoGray), shape = AbsoluteRoundedCornerShape(5.dp)), // color based on ping result
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(15.dp))
     }
 }
