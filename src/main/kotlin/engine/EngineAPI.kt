@@ -12,7 +12,7 @@ suspend fun pingEngineAPI(ip: String): Boolean = withContext(Dispatchers.IO) {
     try {
         val client = HttpClient.newHttpClient()
         val request = HttpRequest.newBuilder()
-            .uri(URI("http://10.42.0.1:8080/pingMotor")) // replace with your server's URL
+            .uri(URI("http://xxxxxxxx/pingMotor")) // replace with your server's URL
             .POST(HttpRequest.BodyPublishers.ofString("ip=$ip"))
             .header("Content-Type", "application/x-www-form-urlencoded")
             .build()
