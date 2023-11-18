@@ -9,19 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-val ipAddress0 = "8.8.8.8"
-val ipAddress1 = "192.168.100.6"
-val ipAddress2 = "192.168.100.7"
-val ipAddress3 = "192.168.232.254"
-val ipAddress4 = "192.168.232.59"
-val ipAddress5 = "archlinux.org"
-val ipAddress6 = "debian.org"
-val ipAddress7 = "fedoraproject.org"
-val ipAddress8 = "google.com"
-val ipAddress9 = "ubuntu.com"
-val ipAddress10 = "linuxmint.com"
-val ipAddress11 = "opensuse.org"
-
 @Composable
 @Preview
 fun settingScreen() {
