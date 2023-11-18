@@ -10,10 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import engine.ipAddress0
-import engine.ipAddress1
-import engine.ipAddress2
-import engine.ipAddress3
+import engine.EngineIPList.Companion.ipAddress0
+import engine.EngineIPList.Companion.ipAddress1
+import engine.EngineIPList.Companion.ipAddress2
+import engine.EngineIPList.Companion.ipAddress3
 
 @Composable
 fun ipBoxA(pingSuccessfulA: Boolean, pingSuccessfulB: Boolean, pingSuccessfulC: Boolean, pingSuccessfulD: Boolean) {
