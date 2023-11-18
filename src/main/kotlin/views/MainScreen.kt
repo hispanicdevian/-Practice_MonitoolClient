@@ -19,11 +19,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import custom_layout.ipBoxA
-import custom_layout.ipBoxB
-import custom_layout.ipBoxC
-import custom_layout.ipBoxD
-import engine.pingEngineAPI
+import ip_boxes.ipBoxA
+import ip_boxes.ipBoxB
+import ip_boxes.ipBoxC
+import ip_boxes.ipBoxD
+import engine.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -39,7 +39,6 @@ fun mainScreen() {
 
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Main) }
 
-// Go to /SettingScreen.kt for IP Variables
     var pingSuccessful0 by remember { mutableStateOf(false) }
     var pingSuccessful1 by remember { mutableStateOf(false) }
     var pingSuccessful2 by remember { mutableStateOf(false) }
@@ -73,6 +72,12 @@ fun mainScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentSize(Alignment.Center)
+                    .wrapContentSize(Alignment.Center)
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null,
+                        onClick = { currentScreen = Screen.Main }
+                    )
             )
         }
 
@@ -80,16 +85,16 @@ fun mainScreen() {
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 15.dp, end = 15.dp),
+                .padding(top = 20.dp, end = 20.dp),
         ) {
-            // Box in the top-right corner
+// Box in the top-right corner
             Box(
                 modifier = Modifier
-                    .size(30.dp)
+                    .size(20.dp)
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = rememberRipple(bounded = false, radius = 20.dp),
-                        onClick = { currentScreen = Screen.Setting }
+                        indication = rememberRipple(bounded = false, radius = 15.dp),
+                        onClick = {  }
                     )
             ) {
                 Image(
@@ -99,12 +104,33 @@ fun mainScreen() {
                 )
             }
         }
-
+// Home Button
+        Box(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(top = 20.dp, start = 20.dp),
+        ) {
+// Box in the top-left corner
+            Box(
+                modifier = Modifier
+                    .size(20.dp)
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = rememberRipple(bounded = false, radius = 15.dp),
+                        onClick = { currentScreen = Screen.Main }
+                    )
+            ) {
+                Image(
+                    painter = painterResource("HomePng240.png"),
+                    contentDescription = "Sample",
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
+        }
 // Coroutine Call to App Engines
         LaunchedEffect(Unit) {
             while (isActive) {
                 val results = listOf(
-
                     async { pingEngineAPI(ipAddress0) },
                     async { pingEngineAPI(ipAddress1) },
                     async { pingEngineAPI(ipAddress2) },
@@ -117,9 +143,7 @@ fun mainScreen() {
                     async { pingEngineAPI(ipAddress9) },
                     async { pingEngineAPI(ipAddress10) },
                     async { pingEngineAPI(ipAddress11) }
-                    // Add as needed
                 )
-
 // Engine Request Results
                 pingSuccessful0 = results[0].await()
                 pingSuccessful1 = results[1].await()
@@ -133,12 +157,10 @@ fun mainScreen() {
                 pingSuccessful9 = results[9].await()
                 pingSuccessful10 = results[10].await()
                 pingSuccessful11 = results[11].await()
-                // Add as needed
 
                 delay(10000) // this is in ms, delay for 10 second
             }
         }
-
         when (currentScreen) {
             is Screen.Main -> {
                 Row(
@@ -149,12 +171,16 @@ fun mainScreen() {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+// Box Set A
                     ipBoxA(pingSuccessful0, pingSuccessful1, pingSuccessful2, pingSuccessful3)
                     Spacer(modifier = Modifier.width(20.dp))
+// Box Set B
                     ipBoxB(pingSuccessful4, pingSuccessful5, pingSuccessful6, pingSuccessful7)
                     Spacer(modifier = Modifier.width(20.dp))
+// Box Set C
                     ipBoxC(pingSuccessful8, pingSuccessful9, pingSuccessful10, pingSuccessful11)
                     Spacer(modifier = Modifier.width(20.dp))
+// Box Set D
                     ipBoxD()
                 }
             }

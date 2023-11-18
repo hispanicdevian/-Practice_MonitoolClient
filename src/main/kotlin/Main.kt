@@ -8,7 +8,7 @@ fun main() {
     application {
         val windowState = rememberWindowState(size = DpSize.Unspecified)
         Window(onCloseRequest = ::exitApplication, state = windowState) {
-            mainScreen()
+            views.mainScreen()
         }
     }
 }

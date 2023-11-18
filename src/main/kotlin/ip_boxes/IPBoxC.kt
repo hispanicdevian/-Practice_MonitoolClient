@@ -1,4 +1,4 @@
-package custom_layout
+package ip_boxes
 
 import ErgoGreen
 import ErgoRed

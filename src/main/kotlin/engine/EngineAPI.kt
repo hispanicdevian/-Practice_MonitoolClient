@@ -2,25 +2,26 @@ package engine
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.net.HttpURLConnection
-import java.net.URL
+import java.io.IOException
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
 
 suspend fun pingEngineAPI(ip: String): Boolean = withContext(Dispatchers.IO) {
     try {
-        val url = URL("http://xxxxxxxxxx:8080/pingMotor") // Replace IP or Hostname to match the API
-        val connection = url.openConnection() as HttpURLConnection
-        connection.requestMethod = "POST"
-        connection.doOutput = true
-        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
-        connection.outputStream.write(("ip=$ip").toByteArray(Charsets.UTF_8))
-        connection.connect()
+        val client = HttpClient.newHttpClient()
+        val request = HttpRequest.newBuilder()
+            .uri(URI("http://xxxxxx:8080/pingMotor")) // replace with your server's URL
+            .POST(HttpRequest.BodyPublishers.ofString("ip=$ip"))
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .build()
 
-// This Handle the Response From The API
-        val response = connection.inputStream.bufferedReader().use { it.readText() }
-        connection.disconnect()
+        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
 
-        return@withContext response == "true"
-    } catch (e: Exception) {
+        val responseBody = response.body()
+        return@withContext responseBody == "true"
+    } catch (e: IOException) {
         println("Error in pingEngineAPI: ${e.message}")
         return@withContext false
     }
