@@ -87,7 +87,6 @@ fun mainScreen() {
                 .align(Alignment.TopEnd)
                 .padding(top = 20.dp, end = 20.dp),
         ) {
-// Box in the top-right corner
             Box(
                 modifier = Modifier
                     .size(20.dp)
@@ -110,7 +109,6 @@ fun mainScreen() {
                 .align(Alignment.TopStart)
                 .padding(top = 20.dp, start = 20.dp),
         ) {
-// Box in the top-left corner
             Box(
                 modifier = Modifier
                     .size(20.dp)
