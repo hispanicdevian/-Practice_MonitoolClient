@@ -41,8 +41,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 
 sealed class Screen {
-    data object Main : Screen()
-    data object Setting : Screen()
+    object Main : Screen()
+    object Setting : Screen()
 }
 
 @Composable

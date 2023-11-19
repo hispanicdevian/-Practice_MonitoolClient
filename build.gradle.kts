@@ -20,6 +20,7 @@ dependencies {
     // (in a separate module for demo project and in testMain).
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
 }
 
 compose.desktop {
@@ -27,7 +28,7 @@ compose.desktop {
         mainClass = "MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.AppImage, TargetFormat.Rpm)
             packageName = "MonitoolClient"
             packageVersion = "1.0.0"
         }
